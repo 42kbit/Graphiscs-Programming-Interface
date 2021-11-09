@@ -8,8 +8,11 @@ add_executable(${PROJECT_NAME}
 src/main.cpp
 src/Modules/FileReader.cpp
 src/Modules/ShaderCompiler.cpp
+src/Modules/TextureReader.cpp
 
 src/GlWrappers/Buffer.cpp 
+src/GlWrappers/Shader.cpp
+src/GlWrappers/Texture.cpp
 )
 
 add_subdirectory(external/glad)
@@ -20,6 +23,7 @@ target_link_libraries(${PROJECT_NAME} SDL2)
 
 add_subdirectory(external/glm)
 
+target_include_directories(${PROJECT_NAME} PUBLIC src/)
 target_include_directories(${PROJECT_NAME} PUBLIC external/)
 target_include_directories(${PROJECT_NAME} PUBLIC external/SDL2/include)
 
