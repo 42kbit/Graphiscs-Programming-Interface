@@ -4,6 +4,9 @@
 
 #include "glad/glad.h"
 
+#include "Modules/FileReader.h"
+#include "Modules/ShaderCompiler.h"
+
 const uint32_t WIDTH = 600, HEIGHT = 480;
 const uint32_t FPS_LIMIT = 60;
 
@@ -56,6 +59,12 @@ int main( int argc, char* args[] )
     vbo = createBuffer(GL_ARRAY_BUFFER, sizeof(Vertex) * 4, vertecies, GL_STATIC_DRAW);
     ebo = createBuffer(GL_ELEMENT_ARRAY_BUFFER, sizeof(uint32_t) * 6, indecies, GL_STATIC_DRAW);
 
+    uint32_t vertexShaderID, fragmentShaderID, programID;
+    vertexShaderID = createShader(readFile("res/rect.vert").c_str(), GL_VERTEX_SHADER);
+    fragmentShaderID = createShader(readFile("res/rect.frag").c_str(), GL_FRAGMENT_SHADER);
+
+    programID = createProgram(vertexShaderID, fragmentShaderID);
+
     while(!windowShouldClose){
         uint32_t startFrameTime = SDL_GetTicks();
 
@@ -74,15 +83,17 @@ int main( int argc, char* args[] )
         glClearColor(0.5, 0.8, 0.9, 1);
         glClear(GL_COLOR_BUFFER_BIT);
 
+        glUseProgram(programID);
+
         glBindBuffer(GL_ARRAY_BUFFER, vbo);
-            glVertexPointer(2, GL_FLOAT, sizeof(Vertex), NULL);
+            glVertexAttribPointer(0, 2, GL_FLOAT, GL_FALSE, sizeof(Vertex), offsetof(Vertex, px));
         glBindBuffer(GL_ARRAY_BUFFER, 0);
 
-        glEnableClientState(GL_VERTEX_ARRAY);
+        glEnableVertexAttribArray(0);
         glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, ebo);
             glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, NULL);
         glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, 0);
-        glDisableClientState(GL_VERTEX_ARRAY);
+        glDisableVertexAttribArray(0);
 
         SDL_GL_SwapWindow(windowPtr);
 

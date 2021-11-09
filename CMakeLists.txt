@@ -6,6 +6,8 @@ project(${PROJECT_NAME})
 
 add_executable(${PROJECT_NAME} 
 src/main.cpp
+src/Modules/FileReader.cpp
+src/Modules/ShaderCompiler.cpp
 )
 
 add_subdirectory(external/glad)
