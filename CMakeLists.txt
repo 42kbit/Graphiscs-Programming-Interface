@@ -4,8 +4,7 @@ set(PROJECT_NAME SDL_OpenGL0)
 
 project(${PROJECT_NAME})
 
-add_executable(${PROJECT_NAME} 
-src/main.cpp
+add_library(${PROJECT_NAME} 
 src/Modules/FileReader.cpp
 src/Modules/ShaderCompiler.cpp
 src/Modules/TextureReader.cpp
@@ -29,4 +28,4 @@ target_include_directories(${PROJECT_NAME} PUBLIC external/SDL2/include)
 
 set_target_properties(${PROJECT_NAME} PROPERTIES RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin/)
 
-add_custom_command(TARGET ${PROJECT_NAME} POST_BUILD COMMAND ${CMAKE_COMMAND} -E copy_directory ${CMAKE_SOURCE_DIR}/res $<TARGET_FILE_DIR:${PROJECT_NAME}>/res)
+#add_custom_command(TARGET ${PROJECT_NAME} POST_BUILD COMMAND ${CMAKE_COMMAND} -E copy_directory ${CMAKE_SOURCE_DIR}/res $<TARGET_FILE_DIR:${PROJECT_NAME}>/res)
