@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.13 FATAL_ERROR)
 
-set(PROJECT_NAME SDL_OpenGL0)
+set(PROJECT_NAME sdl-opengl-lib)
 
 project(${PROJECT_NAME})
 
@@ -27,5 +27,3 @@ target_include_directories(${PROJECT_NAME} PUBLIC external/)
 target_include_directories(${PROJECT_NAME} PUBLIC external/SDL2/include)
 
 set_target_properties(${PROJECT_NAME} PROPERTIES RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin/)
-
-#add_custom_command(TARGET ${PROJECT_NAME} POST_BUILD COMMAND ${CMAKE_COMMAND} -E copy_directory ${CMAKE_SOURCE_DIR}/res $<TARGET_FILE_DIR:${PROJECT_NAME}>/res)
