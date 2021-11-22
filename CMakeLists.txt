@@ -12,6 +12,8 @@ src/Modules/GPI_TextureReader.cpp
 src/GlWrappers/GPI_Buffer.cpp 
 src/GlWrappers/GPI_Shader.cpp
 src/GlWrappers/GPI_Texture.cpp
+src/GlWrappers/GPI_VertexLayout.cpp
+src/GlWrappers/GPI_Renderer.cpp
 )
 
 add_subdirectory(external/glad)
