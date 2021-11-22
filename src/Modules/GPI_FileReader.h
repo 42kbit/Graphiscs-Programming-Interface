@@ -2,14 +2,7 @@
 #define H_FILEREADER
 
 #include <string>
-namespace gm
-{
-namespace mod
-{
 
-std::string readFile(const std::string& path);
-
-}
-}
+std::string GPI_ReadFile(const std::string& path);
 
 #endif // H_FILEREADER

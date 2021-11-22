@@ -1,8 +1,8 @@
-#include "FileReader.h"
+#include "GPI_FileReader.h"
 #include <fstream>
 #include <iostream>
 
-std::string gm::mod::readFile(const std::string& path)
+std::string GPI_readFile(const std::string& path)
 {
     std::string content;
     std::ifstream fileStream(path, std::ios::in);

@@ -1,9 +1,9 @@
-#include "ShaderCompiler.h"
+#include "GPI_ShaderCompiler.h"
 #include "glad/glad.h"
 
 #include <iostream>
 
-uint32_t gm::gl::createShader(const char* src, uint32_t TYPE)
+uint32_t GPI_CreateShader(const char* src, uint32_t TYPE)
 {
     uint32_t shaderID = glCreateShader(TYPE);
     glShaderSource(shaderID, 1, &src, NULL);
@@ -24,7 +24,7 @@ uint32_t gm::gl::createShader(const char* src, uint32_t TYPE)
     return shaderID;
 }
 
-uint32_t gm::gl::createProgram(uint32_t vertexShaderID, uint32_t fragmentShaderID)
+uint32_t GPI_CreateProgram(uint32_t vertexShaderID, uint32_t fragmentShaderID)
 {
     uint32_t programID = glCreateProgram();
     glAttachShader(programID, vertexShaderID);

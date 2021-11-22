@@ -1,7 +1,7 @@
-#include "Buffer.h"
+#include "GPI_Buffer.h"
 #include "glad/glad.h"
 
-gm::gl::Buffer gm::gl::createBuffer(uint32_t TYPE, uint32_t byte_size, void* data, uint32_t DRAW_MODE)
+GPI_Buffer GPI_CreateBuffer(uint32_t TYPE, uint32_t byte_size, void* data, uint32_t DRAW_MODE)
 {
     uint32_t id;
     glGenBuffers(1, &id);
@@ -11,12 +11,12 @@ gm::gl::Buffer gm::gl::createBuffer(uint32_t TYPE, uint32_t byte_size, void* dat
     return {id, TYPE, DRAW_MODE};
 }
 
-void gm::gl::bindBuffer(Buffer* buffer)
+void GPI_BindBuffer(GPI_Buffer* buffer)
 {
     glBindBuffer(buffer->TYPE, buffer->glID);
 }
 
-void gm::gl::unbindBuffer(Buffer* buffer)
+void GPI_UnbindBuffer(GPI_Buffer* buffer)
 {
     glBindBuffer(buffer->TYPE, 0);
 }

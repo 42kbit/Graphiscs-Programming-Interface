@@ -1,17 +1,17 @@
 cmake_minimum_required(VERSION 3.13 FATAL_ERROR)
 
-set(PROJECT_NAME sdl-opengl-lib)
+set(PROJECT_NAME GPI) #GRAPHICS PROGRAMMING INTERFACE
 
 project(${PROJECT_NAME})
 
 add_library(${PROJECT_NAME} 
-src/Modules/FileReader.cpp
-src/Modules/ShaderCompiler.cpp
-src/Modules/TextureReader.cpp
+src/Modules/GPI_FileReader.cpp
+src/Modules/GPI_ShaderCompiler.cpp
+src/Modules/GPI_TextureReader.cpp
 
-src/GlWrappers/Buffer.cpp 
-src/GlWrappers/Shader.cpp
-src/GlWrappers/Texture.cpp
+src/GlWrappers/GPI_Buffer.cpp 
+src/GlWrappers/GPI_Shader.cpp
+src/GlWrappers/GPI_Texture.cpp
 )
 
 add_subdirectory(external/glad)

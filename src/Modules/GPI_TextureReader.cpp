@@ -1,10 +1,10 @@
-#include "TextureReader.h"
+#include "GPI_TextureReader.h"
 #include "glad/glad.h"
 
 #define STB_IMAGE_IMPLEMENTATION
 #include "stb_image.h"
 
-uint32_t gm::mod::readTexture(const char* path, uint32_t WRAP_MODE, uint32_t FILTER_MODE, uint32_t TEXTURE_TYPE)
+uint32_t GPI_ReadTexture(const char* path, uint32_t WRAP_MODE, uint32_t FILTER_MODE, uint32_t TEXTURE_TYPE)
 {
     int width, height, channels;
     uint32_t glID;
