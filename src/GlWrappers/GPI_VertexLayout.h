@@ -27,7 +27,7 @@ struct GPI_VertexSegment
 
 struct GPI_VertexLayout
 {
-    uint32_t stride;
+    uint32_t stride = 0;
     std::vector<GPI_VertexSegment> segments;
 };
 
