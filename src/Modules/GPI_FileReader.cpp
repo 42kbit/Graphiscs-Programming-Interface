@@ -2,7 +2,7 @@
 #include <fstream>
 #include <iostream>
 
-std::string GPI_readFile(const std::string& path)
+std::string GPI_ReadFile(const std::string& path)
 {
     std::string content;
     std::ifstream fileStream(path, std::ios::in);
