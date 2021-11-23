@@ -5,7 +5,7 @@
 
 #include "glad/glad.h"
 
-GPI_Shader GPI_createShaderFromFiles(const char* vertexPath,
+GPI_Shader GPI_CreateShaderFromFiles(const char* vertexPath,
                                              const char* fragmentPath)
 {
     std::string vertexSrc = GPI_ReadFile(std::string(vertexPath));
@@ -18,7 +18,7 @@ GPI_Shader GPI_createShaderFromFiles(const char* vertexPath,
     return {programID};
 }
 
-int32_t GPI_getUniformLocation(GPI_Shader* shader, char* uniformName)
+int32_t GPI_GetUniformLocation(GPI_Shader* shader, char* uniformName)
 {
     int location = glGetUniformLocation(shader->glID, uniformName);
     return location;
