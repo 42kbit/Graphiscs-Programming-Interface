@@ -14,6 +14,7 @@ src/GlWrappers/GPI_Shader.cpp
 src/GlWrappers/GPI_Texture.cpp
 src/GlWrappers/GPI_VertexLayout.cpp
 src/GlWrappers/GPI_Renderer.cpp
+src/GlWrappers/GPI_VertexArray.cpp
 )
 
 add_subdirectory(external/glad)
