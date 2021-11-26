@@ -17,7 +17,16 @@ void GPI_BindVertexArrayAttribs(GPI_VertexArray* target)
     for(uint32_t i = 0; i < target->dataLayout->segments.size(); i++)
     {
         auto& current = target->dataLayout->segments[i];
-        glVertexAttribPointer(i, current.count, current.type, current.normalized, target->dataLayout->stride, (const void*)offset);
+        switch (current.type)
+        {
+        case GL_FLOAT:
+            glVertexAttribPointer(i, current.count, current.type, current.normalized, target->dataLayout->stride, (const void*)offset);
+            break;
+        case GL_UNSIGNED_INT:
+            glVertexAttribIPointer(i, current.count, current.type, target->dataLayout->stride, (const void*)offset);
+            break;
+        }
+        
         glEnableVertexAttribArray(i);    
         offset += current.count * GPI_GetGlTypeSize(current.type);
     }
