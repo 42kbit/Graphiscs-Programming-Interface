@@ -16,7 +16,7 @@ src/GlWrappers/GPI_VertexLayout.cpp
 src/GlWrappers/GPI_Renderer.cpp
 src/GlWrappers/GPI_VertexArray.cpp
 
-src/Engine/GPI_Camera.h
+src/Engine/GPI_Camera.cpp
 )
 
 add_subdirectory(external/glad)
