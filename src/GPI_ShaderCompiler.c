@@ -1,8 +1,6 @@
 #include "GPI_ShaderCompiler.h"
 #include "glad/glad.h"
 
-#include <stdio.h>
-
 uint32_t GPI_CreateShader(const char* src, uint32_t TYPE)
 {
     uint32_t shaderID = glCreateShader(TYPE);

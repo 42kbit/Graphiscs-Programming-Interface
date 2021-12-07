@@ -5,17 +5,9 @@
 #include "GPI_Buffer.h"
 #include <inttypes.h>
 
-inline uint32_t GPI_GetGlTypeSize(uint32_t TYPE)
-{
-    switch (TYPE)
-    {
-    case GL_FLOAT:
-    case GL_UNSIGNED_INT:
-        return 4;
-        break;
-    }
-    return 0;
-}
+#define GPI_MAX_VERTEX_LAYOUT_SEGMENTS 16
+
+uint32_t GPI_GetGlTypeSize(uint32_t TYPE);
 
 typedef struct
 {

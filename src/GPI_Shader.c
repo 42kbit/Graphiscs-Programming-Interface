@@ -4,9 +4,12 @@
 #include "GPI_ShaderCompiler.h"
 
 #include "glad/glad.h"
+#include <malloc.h>
 
-GPI_Shader GPI_CreateShaderFromFiles(const char* vertexPath,
-                                             const char* fragmentPath)
+#include <stdio.h>
+
+GPI_Shader GPI_CreateShaderFromFiles(char* vertexPath,
+                                            char* fragmentPath)
 {
     char* vertexSrc = GPI_ReadFile(vertexPath);
     char* fragmentSrc = GPI_ReadFile(fragmentPath);
