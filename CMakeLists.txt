@@ -5,18 +5,18 @@ set(PROJECT_NAME gpi) #GRAPHICS PROGRAMMING INTERFACE
 project(${PROJECT_NAME})
 
 add_library(${PROJECT_NAME} 
-src/GPI_FileReader.cpp
-src/GPI_ShaderCompiler.cpp
-src/GPI_TextureReader.cpp
+src/GPI_FileReader.c
+src/GPI_ShaderCompiler.c
+src/GPI_TextureReader.c
 
-src/GPI_Buffer.cpp 
-src/GPI_Shader.cpp
-src/GPI_Texture.cpp
-src/GPI_VertexLayout.cpp
-src/GPI_Renderer.cpp
-src/GPI_VertexArray.cpp
+src/GPI_Buffer.c
+src/GPI_Shader.c
+src/GPI_Texture.c
+src/GPI_VertexLayout.c
+src/GPI_Renderer.c
+src/GPI_VertexArray.c
 
-src/GPI_Camera.cpp
+src/GPI_Camera.c
 )
 
 add_subdirectory(external/glad)
