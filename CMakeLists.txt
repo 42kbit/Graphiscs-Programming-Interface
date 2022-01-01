@@ -24,7 +24,7 @@ include_directories(${SDL2_INCLUDE_DIRS})
 target_link_libraries(${PROJECT_NAME}  ${SDL2_LIBRARIES})
 
 add_subdirectory(external/glad)
-target_link_libraries(${PROJECT_NAME} glad)
+target_link_libraries(${PROJECT_NAME} glad -ldl)
 
 
 add_subdirectory(external/cglm)
